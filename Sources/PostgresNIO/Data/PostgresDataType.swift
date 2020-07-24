@@ -105,7 +105,9 @@ public struct PostgresDataType: Codable, Equatable, ExpressibleByIntegerLiteral,
     public static let jsonb = PostgresDataType(3802)
     /// `3807` _jsonb
     public static let jsonbArray = PostgresDataType(3807)
-
+    /// `3912`
+    public static let dateRange = PostgresDataType(3912)
+    
     /// The raw data type code recognized by PostgreSQL.
     public var rawValue: UInt32
 
@@ -175,6 +177,7 @@ public struct PostgresDataType: Codable, Equatable, ExpressibleByIntegerLiteral,
         case .uuidArray: return "UUID[]"
         case .jsonb: return "JSONB"
         case .jsonbArray: return "JSONB[]"
+        case .dateRange: return "daterange"
         default: return nil
         }
     }
